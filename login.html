@@ -1,0 +1,44 @@
+  <!-- LOGIN -->
+  <section id="login">
+    <div class="login-container">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label>Username:</label>
+        <input type="text" id="username" required>
+        <label>Password:</label>
+        <input type="password" id="password" required>
+        <button type="submit">Login</button>
+      </form>
+      <p id="loginMessage"></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 RentNest rentals| All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Section switching
+    function showSection(sectionId) {
+      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+      document.getElementById(sectionId).classList.add("active");
+    }
+
+    // Login validation
+    document.getElementById("loginForm")?.addEventListener("submit", function(e){
+      e.preventDefault();
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      const msg = document.getElementById("loginMessage");
+
+      if(user === "Francis"&& pass ==="francis@12" ){
+        msg.textContent = "Login successful! Welcome " + user;
+        msg.style.color = "green";
+      } else {
+        msg.textContent = "Invalid username or password!";
+        msg.style.color = "red";
+      }
+    });
+  </script>
+</body>
+</html>
