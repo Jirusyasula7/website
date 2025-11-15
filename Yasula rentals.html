@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RentNest rentals- Rental Houses</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background: #007bff;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin-bottom: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      display: none;
+      padding: 40px 20px;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    .hero {
+      text-align: center;
+      background: #e6f0ff;
+      padding: 40px 20px;
+    }
+
+    .houses {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .house-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .house {
+      background: white;
+      width: 280px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 15px;
+      transition: transform 0.2s;
+    }
+
+    .house:hover {
+      transform: translateY(-5px);
+    }
+
+    .house img {
+      width: 100%;
+      border-radius: 10px;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    footer {
+      background: #007bff;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    .login-container, .contact, .about {
+      width: 90%;
+      max-width: 400px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    form input, form textarea, form button {
+      width: 100%;
+      margin: 8px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 10px 0;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    #loginMessage {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1RentNestrentals</h1>
+    <nav>
+      <a href="#" onclick="showSection('home')">Home</a>
+      <a href="#" onclick="showSection('about')">About Us</a>
+      <a href="#" onclick="showSection('contact')">Contact</a>
+      <a href="#" onclick="showSection('login')">Login</a>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+  <section id="home" class="active">
+    <div class="hero">
+      <h2>Find Your Perfect Home</h2>
+      <p>Affordable rentals with comfort, security, and convenience.</p>
+    </div>
+
+    <div class="houses">
+      <h2>Available Houses</h2>
+
+      <div class="house-list">
+        <div class="house">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800" alt="Single Room">
+          <h3>Single Room</h3>
+          <p><strong>Amount:</strong> Ksh 3500/month</p>
+          <p><strong>Location:</strong> Kangaru</p>
+          <p><strong>Security:</strong> 24/7 Guards, CCTV</p>
+          <p><strong>Utilities:</strong> Water, Electricity</p>
+        </div>
+
+        <div class="house">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800" alt="Bedsitter">
+          <h3>Bedsitter</h3>
+          <p><strong>Amount:</strong> Ksh 6000/month</p>
+          <p><strong>Location:</strong> Bagik</p>
+          <p><strong>Security:</strong> Gated, Watchman</p>
+          <p><strong>Utilities:</strong> Water, Wi-Fi</p>
+        </div>
+
+        <div class="house">
+          <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4" alt="One Bedroom">
+          <h3>One Bedroom</h3>
+          <p><strong>Amount:</strong> Ksh 7,500/month</p>
+          <p><strong>Location:</strong> Embu town</p>
+          <p><strong>Security:</strong> 24/7 Guards, Cameras</p>
+          <p><strong>Utilities:</strong> Water, Electricity, Internet</p>
+        </div>
+
+        <div class="house">
+          <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800" alt="Two Bedroom">
+          <h3>Two Bedroom</h3>
+          <p><strong>Amount:</strong> Ksh 15,000/month</p>
+          <p><strong>Location:</strong> G-town</p>
+          <p><strong>Security:</strong> Secure Gate, Patrol</p>
+          <p><strong>Utilities:</strong> Water, Wi-Fi, Parking</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about">
+      <h2>About RentNest rentals</h2>
+      <p>RentNest rentals helps you find affordable, safe, and comfortable houses easily. We connect landlords and tenants through a transparent, modern platform.</p>
+      <p>Our mission is to make finding your next home simple and stress-free.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact">
+      <h2>Contact Us</h2>
+      <form>
+        <label>Name:</label>
+        <input type="text" required>
+        <label>Email:</label>
+        <input type="email" required>
+        <label>Message:</label>
+        <textarea rows="4" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- LOGIN -->
+  <section id="login">
+    <div class="login-container">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label>Username:</label>
+        <input type="text" id="username" required>
+        <label>Password:</label>
+        <input type="password" id="password" required>
+        <button type="submit">Login</button>
+      </form>
+      <p id="loginMessage"></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 RentNest rentals| All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Section switching
+    function showSection(sectionId) {
+      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+      document.getElementById(sectionId).classList.add("active");
+    }
+
+    // Login validation
+    document.getElementById("loginForm")?.addEventListener("submit", function(e){
+      e.preventDefault();
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      const msg = document.getElementById("loginMessage");
+
+      if(user === "Francis"&& pass ==="francis@12" ){
+        msg.textContent = "Login successful! Welcome " + user;
+        msg.style.color = "green";
+      } else {
+        msg.textContent = "Invalid username or password!";
+        msg.style.color = "red";
+      }
+    });
+  </script>
+</body>
+</html>
